@@ -6,6 +6,7 @@
 Получите уникальные названия районов из таблицы с адресами, которые начинаются на “K” и заканчиваются на “a” и не содержат пробелов.
 
 ### Решение 1
+```
 mysql> SELECT district FROM address WHERE district RLIKE '^K[a-z]*a$';
 +-----------+
 | district  |
@@ -24,13 +25,13 @@ mysql> SELECT district FROM address WHERE district RLIKE '^K[a-z]*a$';
 | Karnataka |
 | Karnataka |
 +-----------+
-
+```
 ### Задание 2
 
 Получите из таблицы платежей за прокат фильмов информацию по платежам, которые выполнялись в промежуток с 15 июня 2005 года по 18 июня 2005 года **включительно** и стоимость которых превышает 10.00.
 
 ### Решение 2
-
+```
 mysql> SELECT payment_id, customer_id, staff_id, rental_id, amount, payment_date FROM payment 
 WHERE amount > 10 AND payment_date BETWEEN '2005-06-15 00:00:00 AND '2005-06-18 23:59:59' 
 ORDER BY payment_date;
@@ -49,13 +50,13 @@ ORDER BY payment_date;
 7 rows in set (0.01 sec)
 
 mysql>
-
+```
 ### Задание 3
 
 Получите последние пять аренд фильмов.
 
 ### Решение 3
-
+```
 mysql> SELECT rental_id,
     ->        rental_date,
     ->        inventory_id,
@@ -77,7 +78,7 @@ mysql> SELECT rental_id,
 5 rows in set (0.00 sec)
 
 mysql>
-
+```
 
 ### Задание 4
 
@@ -88,7 +89,7 @@ mysql>
 - замените буквы 'll' в именах на 'pp'.
 
 ### Решение 4
-
+```
 mysql> SELECT
     ->     REPLACE(LOWER(first_name), 'll', 'pp') AS modified_first_name,
     ->     LOWER(last_name) AS modified_last_name
@@ -106,7 +107,7 @@ mysql> SELECT
 4 rows in set (0.00 sec)
 
 mysql>
-
+```
 
 ## Дополнительные задания (со звёздочкой*)
 Эти задания дополнительные, то есть не обязательные к выполнению, и никак не повлияют на получение вами зачёта по этому домашнему заданию. Вы можете их выполнить, если хотите глубже шире разобраться в материале.
